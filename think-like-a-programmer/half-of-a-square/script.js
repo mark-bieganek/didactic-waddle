@@ -13,3 +13,12 @@ We need a way to output a single line of five `console.log('#')` with a
     - we can output `console.log('\n')` after the loop has completed.
 
     */
+
+const singleLine = () => {
+    for (i = 1; i <=5; i++) {
+        console.log('#');
+    };
+    console.log('\n');
+}
+
+singleLine();
