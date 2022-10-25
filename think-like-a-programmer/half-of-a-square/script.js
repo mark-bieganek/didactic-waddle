@@ -18,15 +18,33 @@ Algorithm - Write a single line:
         - function parameters provide the symbol to repeat, and the
         total times to repeat it.
         - use a recursive function call to duplicate the value of 
-        `symbol` a total of `count` times.
+        `symbol` a total of `columns` times.
 
+Now that we can write a single line, we need a way to repeat the line
+and reduce the total # symbols by 1 on each line.
+
+Algorithm - Write multiple lines:
+    - Create an empty string variable named output.
+    - Concatenate the output variable by calling singleLine() 5 times, 
+    reducing each 'columns' argument by a value of 1 each time.
     */
 
-const singleLine = (symbol, count) => {
-    if (count > 1) {
-        symbol += singleLine(symbol, count -1);
+const singleLine = (symbol, columns) => {
+    if (columns > 1) {
+        symbol += singleLine(symbol, columns -1);
     };
-    return symbol;
+    return columns <= 1 ? symbol + '\n' : symbol;
 }
 
-console.log(singleLine('#', 5));
+const multiLine = (symbol, rows) => {
+    let output = '';
+    output += singleLine(symbol, 5);
+    output += singleLine(symbol, 4);
+    output += singleLine(symbol, 3);
+    output += singleLine(symbol, 2);
+    output += singleLine(symbol, 1);
+    return output;
+}
+
+// console.log(singleLine('#', 5));
+console.log(multiLine('#', 5));
