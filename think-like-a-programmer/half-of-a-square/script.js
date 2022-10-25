@@ -38,11 +38,11 @@ const singleLine = (symbol, columns) => {
 
 const multiLine = (symbol, rows) => {
     let output = '';
-    output += singleLine(symbol, 5);
-    output += singleLine(symbol, 4);
-    output += singleLine(symbol, 3);
-    output += singleLine(symbol, 2);
-    output += singleLine(symbol, 1);
+    output += singleLine(symbol, rows);
+    output += singleLine(symbol, rows-1);
+    output += singleLine(symbol, rows-2);
+    output += singleLine(symbol, rows-3);
+    output += singleLine(symbol, rows-4);
     return output;
 }
 
