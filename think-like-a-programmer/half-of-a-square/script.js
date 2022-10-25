@@ -31,18 +31,22 @@ Algorithm - Write multiple lines:
 
 const singleLine = (symbol, columns) => {
     if (columns > 1) {
+        // Repeat the symbol by the numeric value of `columns`.
         symbol += singleLine(symbol, columns -1);
     };
+    // Return the result. Add new line if all done.
     return columns <= 1 ? symbol + '\n' : symbol;
 }
 
 const multiLine = (symbol, rows) => {
+    // Holds the result.
     let output = '';
-    output += singleLine(symbol, rows);
-    output += singleLine(symbol, rows-1);
-    output += singleLine(symbol, rows-2);
-    output += singleLine(symbol, rows-3);
-    output += singleLine(symbol, rows-4);
+    // Build rows of symbols.
+    while (rows >= 1) {
+        // Build a single row of symbols.
+        output += singleLine(symbol, rows);
+        rows--;       
+    }
     return output;
 }
 
