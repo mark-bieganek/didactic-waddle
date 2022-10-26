@@ -16,17 +16,17 @@ the files.
 Now, we need a way to build the top half of the triangle.
 
 We can probably change multiLine() iteration behaviour. For the first 
-half of the 'rows' argument value, increment. For the second half, 
+half of the 'width' argument value, increment. For the second half, 
 decrement instead.
 
 Algorithm - Write the top-half of the triangle: 
     - Because we want to maintain a shape resembling a sharp triangle,
-    we don't want even numbered rows as that would produce a shape
+    we don't want even numbered width as that would produce a shape
     of a blunt triangle.
-        - If `rows` can be divided by 2 with a remainder, add 1 to its
+        - If `width` can be divided by 2 with a remainder, add 1 to its
         value
-    - Iterate forward (increment) until at rows/2 + 1 (the centre line)
-    - Iterate backwards (decrement) until rows >= 1.
+    - Iterate forward (increment) until at width/2 + 1 (the centre line)
+    - Iterate backwards (decrement) until width >= 1.
     */
 
 const singleLine = (symbol, columns) => {
@@ -38,13 +38,13 @@ const singleLine = (symbol, columns) => {
     return columns <= 1 ? symbol + '\n' : symbol;
 }
 
-const multiLine = (symbol, rows) => {
-    // Ensure rows is an odd number. If not, add 1.
-    rows = rows % 2 ? rows : rows += 1;
+const multiLine = (symbol, width) => {
+    // Ensure width is an odd number. If not, add 1.
+    width = width % 2 ? width : width += 1;
     // Holds the result.
     let output = '';
     // Iteration variable.
-    const centreLine = rows / 2 + 1;
+    const centreLine = width / 2 + 1;
     // Build the top half of the triangle.
     for (i = 1; i < centreLine; i++) {
         // Build a single row of symbols.
