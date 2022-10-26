@@ -49,7 +49,7 @@ const multiLine = (symbol, width) => {
     for (i = 1; i <= width; i++) {
         // Build the top half of the triangle.
         if (i <= centreLine) {output += singleLine(symbol, i)};
-        // Build the top half of the triangle.
+        // Build the bottom half of the triangle.
         if (i > centreLine) {output += singleLine(symbol, (width - i) + 1)};
     };
     return output;
