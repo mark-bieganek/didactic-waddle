@@ -23,3 +23,6 @@ const container = document.querySelector('#container');
 
 // Add a **`<p>`** with red text that says “Hey I’m red!”
 container.appendChild(createElement('p', 'warning', 'Hey I’m red!'));
+
+// an **`<h3>`** with blue text that says “I’m a blue h3!”
+container.appendChild(createElement('h3', 'heading', "I'm a blue h3!"));
