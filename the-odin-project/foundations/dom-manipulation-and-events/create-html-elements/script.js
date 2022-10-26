@@ -8,7 +8,7 @@ const createElement = (elementType, classNames, textContent) => {
                 element.classList.add(className);
             };
         } else {
-            element.classList.add(className); 
+            element.classList.add(classNames); 
         }
     };               
     // Add text content, if included.
@@ -18,5 +18,6 @@ const createElement = (elementType, classNames, textContent) => {
 }
 
 const container = document.querySelector('#container');
-container.appendChild(createElement('p', ['warning','test'], 'Hey I’m red!'));
 
+// Add a **`<p>`** with red text that says “Hey I’m red!”
+container.appendChild(createElement('p', 'warning', 'Hey I’m red!'));
