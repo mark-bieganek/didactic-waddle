@@ -1,13 +1,15 @@
 const createElement = (elementType, classNames, textContent) => {
     // Create the html element.
     const element = document.createElement(elementType);
-    // Add classes from the provided array.
+    // Add classes.
     if (classNames) {
+        // If a list of class names was provided, in an array, add them.
         if (Array.isArray(classNames)) {
             for (const className of classNames) {
                 element.classList.add(className);
             };
         } else {
+            // Add the list of classNames as-is.
             element.classList.add(classNames); 
         }
     };               
