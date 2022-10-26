@@ -39,16 +39,25 @@ const singleLine = (symbol, columns) => {
 }
 
 const multiLine = (symbol, rows) => {
+    // Ensure rows is an odd number. If not, add 1.
+    rows = rows % 2 ? rows : rows += 1;
     // Holds the result.
     let output = '';
-    // Build rows of symbols.
-    while (rows >= 1) {
+    // Iteration variable.
+    const centreLine = rows / 2 + 1;
+    // Build the top half of the triangle.
+    for (i = 1; i < centreLine; i++) {
         // Build a single row of symbols.
-        output += singleLine(symbol, rows);
-        rows--;       
+        output += singleLine(symbol, i);       
+    }
+    // Build the centre line.
+    output += singleLine(symbol, centreLine);
+    // Build the bottom half of the triangle.
+    for (i = centreLine - 1; i >= 0; i--) {
+        // Build a single row of symbols.
+        output += singleLine(symbol, i);       
     }
     return output;
 }
 
-// console.log(singleLine('#', 5));
-console.log(multiLine('#', 5));
+console.log(multiLine('#', 3));
