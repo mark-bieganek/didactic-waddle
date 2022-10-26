@@ -43,20 +43,15 @@ const multiLine = (symbol, width) => {
     width = width % 2 ? width : width += 1;
     // Holds the result.
     let output = '';
-    // Iteration variable.
-    const centreLine = width / 2 + 1;
-    // Build the top half of the triangle.
-    for (i = 1; i < centreLine; i++) {
-        // Build a single row of symbols.
-        output += singleLine(symbol, i);       
-    }
-    // Build the centre line.
-    output += singleLine(symbol, centreLine);
-    // Build the bottom half of the triangle.
-    for (i = centreLine - 1; i >= 0; i--) {
-        // Build a single row of symbols.
-        output += singleLine(symbol, i);       
-    }
+    // Find the centre line.
+    const centreLine = Math.floor(width / 2) + 1;
+    // Build the triangle.
+    for (i = 1; i <= width; i++) {
+        // Build the top half of the triangle.
+        if (i <= centreLine) {output += singleLine(symbol, i)};
+        // Build the top half of the triangle.
+        if (i > centreLine) {output += singleLine(symbol, (width - i) + 1)};
+    };
     return output;
 }
 
