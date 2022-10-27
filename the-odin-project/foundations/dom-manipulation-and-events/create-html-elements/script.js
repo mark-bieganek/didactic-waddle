@@ -1,19 +1,19 @@
-const createElement = (elementType, classNames, textContent) => {
+const createElement = (elementType, elementClasses, elementContent) => {
     // Create the html element.
     const element = document.createElement(elementType);
     // Add classes.
-    if (classNames) {
+    if (elementClasses) {
         // If a list of class names was provided, add them to the new element.
-        if (typeof(classNames) === "string") {
+        if (typeof(elementClasses) === "string") {
             // Split the list into an array.
-            classNames = classNames.split(" ");
+            elementClasses = elementClasses.split(" ");
         };
-        for (const className of classNames) {
+        for (const className of elementClasses) {
             element.classList.add(className);
         };
     };               
     // Add text content, if included.
-    element.textContent = textContent;
+    element.textContent = elementContent;
     // Return the element.
     return element;
 }
@@ -27,4 +27,4 @@ container.appendChild(createElement('p', 'warning', "Hey I'm red!"));
 container.appendChild(createElement('h3', 'heading', "I'm a blue h3!"));
 
 // Add a **`<div>`** with a black border and pink background color.”
-container.appendChild(createElement('div', 'highlight bordered bordered--dark', "a"));
+container.appendChild(createElement('div', 'highlight bordered bordered--dark', " "));
