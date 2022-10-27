@@ -41,3 +41,6 @@ const content = document.querySelector('#content');
 content.appendChild(createElement('h1', '', '', "I'm in a div"));
 // Add another **`<p>`** that says “ME TOO!”
 content.appendChild(createElement('p', '', '', "ME TOO!"));
+
+// Now, complete the exercise using JavaScript's built in methods.
+const vanillaContainer = document.querySelector('#container');
