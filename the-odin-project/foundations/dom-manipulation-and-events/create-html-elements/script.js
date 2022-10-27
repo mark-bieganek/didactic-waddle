@@ -44,3 +44,9 @@ content.appendChild(createElement('p', '', '', "ME TOO!"));
 
 // Now, complete the exercise using JavaScript's built in methods.
 const vanillaContainer = document.querySelector('#container');
+
+// Add a **`<p>`** with red text that says “Hey I’m red!”
+const p1 = document.createElement('p');
+p1.classList.add('warning');
+p1.textContent = "Hey I'm red!";
+vanillaContainer.appendChild(p1);
