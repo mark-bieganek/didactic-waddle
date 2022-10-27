@@ -50,3 +50,9 @@ const p1 = document.createElement('p');
 p1.classList.add('warning');
 p1.textContent = "Hey I'm red!";
 vanillaContainer.appendChild(p1);
+
+// Add another **`<h1>`** that says “I’m in a div”
+const h3 = document.createElement('h3');
+h3.classList.add('heading');
+h3.textContent = "I'm a blue h3!";
+vanillaContainer.appendChild(h3);
