@@ -59,3 +59,29 @@ const h3 = document.createElement('h3');
 h3.classList.add('heading');
 h3.textContent = "I'm a blue h3!";
 vanillaContainer.appendChild(h3);
+
+/* 
+ * Add a **`<div>`** with a black border and pink background color with 
+ * the following elements inside of it: 
+ *   - another **`<h1>`** that says “I’m in a div”
+ *   - a **`<p>`** that says “ME TOO!”
+ */
+
+// Add a **`<div>`** with a black border and pink background color
+const vanillaContent = document.createElement('div');
+// Add the class list to an array, then add the classes to this div using a rest parameter.
+const vanillaContentClasses = 'highlight bordered bordered--dark'.split(" ");
+vanillaContent.classList.add(...vanillaContentClasses);
+
+// another **`<h1>`** that says “I’m in a div”
+const h1 = document.createElement('h1');
+h1.textContent = "I'm in a div";
+vanillaContent.appendChild(h1);
+
+// a **`<p>`** that says “ME TOO!”
+const p2 = document.createElement('p');
+p2.textContent = "ME TOO!";
+vanillaContent.appendChild(p2);
+
+// Append the div to the container.
+vanillaContainer.appendChild(vanillaContent);
