@@ -35,10 +35,13 @@ container.appendChild(createElement('h3', '', 'heading', "I'm a blue h3!"));
  *   - a **`<p>`** that says “ME TOO!”
  */
 container.appendChild(createElement('div', 'content', 'highlight bordered bordered--dark', ""));
+
 // Select the new div.
 const content = document.querySelector('#content');
+
 // Add another **`<h1>`** that says “I’m in a div”
 content.appendChild(createElement('h1', '', '', "I'm in a div"));
+
 // Add another **`<p>`** that says “ME TOO!”
 content.appendChild(createElement('p', '', '', "ME TOO!"));
 
@@ -66,7 +69,6 @@ vanillaContainer.appendChild(h3);
  *   - another **`<h1>`** that says “I’m in a div”
  *   - a **`<p>`** that says “ME TOO!”
  */
-
 // Add a **`<div>`** with a black border and pink background color
 const vanillaContent = document.createElement('div');
 // Add the class list to an array, then add the classes to this div using a rest parameter.
